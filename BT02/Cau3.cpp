@@ -1,3 +1,14 @@
+/*
+
+Tương tự bài trên với dạng tam giác sau (với N bằng 5):
+    *
+   ***
+  *****
+ *******
+*********
+
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;

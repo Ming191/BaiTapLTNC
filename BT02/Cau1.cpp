@@ -1,3 +1,7 @@
+/*
+Viết chương trình Prime đọc vào một số và in ra 'yes' nếu đó là một số nguyên tố. Nếu không thì in ra 'no'.
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;

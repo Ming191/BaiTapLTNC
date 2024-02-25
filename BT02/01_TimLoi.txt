@@ -1,0 +1,20 @@
+1. while (n<20);
+      cout << n++ <<endl;
+while không có mở ngoặc nhọn '{}' nên đây được coi là một vòng lặp trống, nên lệnh cout không được thực hiện.
+
+2. for (int i = 1, i <= 8, ++i)
+      cout << 1.0/i << endl;
+Trong câu lệnh for thì phải dùng dấu ';' chứ không phải ','.
+
+3.int n = 10;
+   do
+ 	   cout << 1.0/n ;
+         n++;
+   while (n < 20);
+lệnh do không có mở ngoặc nhọn '{}' mà while phải ở ngay sau lệnh do.
+
+4.for (int i=10; i<20; ) {
+   cout << i*i <<endl;
+   i--;
+}
+do i-- nên i luôn bé hơn 20, vòng lặp không thể dừng.

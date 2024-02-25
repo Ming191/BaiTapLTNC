@@ -1,3 +1,16 @@
+/*
+Viết chương trình nhập vào 1 số n (n < 100) và in ra ma trận n x n dạng như sau. 
+Ví dụ:input
+10
+output:
+  1  2  3  4  5  6  7  8  9 10
+  2  3  4  5  6  7  8  9 10  1
+  3  4  5  6  7  8  9 10  1  2
+  4  5  6  7  8  9 10  1  2  3
+  5  6  7  8  9 10  1  2  3  4
+
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;

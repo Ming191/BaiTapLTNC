@@ -1,3 +1,13 @@
+/*
+Viết chương trình nhập một số nguyên dương N và in ra một tam giác kích thước N. Chẳng hạn với N bằng 5 thì tam giác có dạng như sau:
+*****
+ ****
+  ***
+   **
+    *
+
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;

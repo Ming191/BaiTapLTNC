@@ -75,7 +75,7 @@ c.  Trong 3 kiểu lặp: while, do- while và for thì for là linh hoạt nh�
 d.     Một đoạn code bất kỳ sử dụng một trong 3 kiểu lặp while, do- while hoặc for thì nó cũng có thể được xây dựng bằng một trong hai kiểu lặp còn lại.
 e.  for là phép lặp “đếm” tự nhiên.
 
-CHỌN B;
+CHỌN ABC;
  
 Câu 9.  Cho đoạn chương trình sau:
 if (i == j) {
@@ -191,7 +191,7 @@ d.      while ( i <= y )
 i++;
 }
 
-CHỌN C;
+CHỌN B;
  
 Câu 15.    Khoanh tròn đáp án đúng cho đoạn code bên dưới:
 int x = -1;

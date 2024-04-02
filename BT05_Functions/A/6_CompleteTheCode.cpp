@@ -21,3 +21,9 @@ int main()
    g(11);
    return 0;
 } 
+/*
+    Output: 0xcf7e3ffc7c
+            0xcf7e3ffc7c
+    Địa chỉ của x và y là giống nhau;
+    Sau khi hàm f được giải phóng, hàm g thế chỗ vào StackFrame của f khiến cho địa chỉ của y có thể giống với địa chỉ của x;
+*/

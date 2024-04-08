@@ -21,7 +21,7 @@ struct Hangman
         badGuesses = 0;
         hiddenLetters = secretWord.length();
     }
-    void update(char input) {
+    void Update(char input) {
         status = BAD_GUESS;
         for (int i = 0; i < secretWord.length(); i++) {
             if(guessedWord[i] == '_' && secretWord[i] == input) {
@@ -116,7 +116,7 @@ int main(int argc, char** argv) {
         render(game);
         while(!game.isOver()) {
             char input = getInput();
-            game.update(input);
+            game.Update(input);
             render(game);
         } ;
         if(game.lost()) cout << "The answer is: " << game.secretWord << endl; 

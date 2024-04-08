@@ -1,0 +1,7 @@
+    ii. p = &n;
+    iii. p1 = p2;
+    iv. Tất cả các phép toán với con trỏ kiểu int.
+    iii. Tất cả các phép toán với các con trỏ ở cùng mảng (trong giới hạn mảng).
+    iv. Tất cả các phát biểu trên.
+    ii. void bubble(int [], const int, bool * (int, int));
+    iii. 2 2 3

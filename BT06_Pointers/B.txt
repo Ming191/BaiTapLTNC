@@ -3,13 +3,16 @@ char c = ‘A', d = ‘B';
 char* p1 = &c;
 char* p2 = &d;
 char* p3;
+
 Giả sử địa chỉ của c là 0x1234, địa chỉ của b là 0x5678. Hỏi output của đoạn lệnh sau là gì?
 p3 = &d;
-cout << “*p3 = “ << *p3 << “, p3 = “ << p3 << endl;
+cout << “*p3 = “ << *p3 << “, p3 = “ << p3 << endl; *p3 = B, p3 = 0x5678 vì p3 = &d gán p3 trỏ đến địa chỉ của d vậy nên *p3 = B và p3 = 0x5678
 p3 = p1;
-cout << “*p3 = “ << *p3 << “, p3 = “ << p3 << endl;
+cout << “*p3 = “ << *p3 << “, p3 = “ << p3 << endl; *p3 = A, p3 = 0x1234 vì p3 = p1 khiến p3 trỏ đến vùng nhớ mà p1 trỏ đến vậy nên *p3 = A và p3 = 0x1234
 *p1 = *p2;
-cout << “*p1 = “ << *p1 << “, p1 = “ << p1 << endl;
+cout << “*p1 = “ << *p1 << “, p1 = “ << p1 << endl; *p1 = B, p1 = 0x1234 vì ta chỉ gán giá trị tại p1 = giá trị tại p2 (*p1 = B) mà không thay đổi địa chỉ của p1
+
+
 
 
 Cho các lệnh sau.
@@ -21,12 +24,12 @@ k = i;
 p = &i;
 
 (Những) lệnh nào trong số các lệnh dưới đây sẽ gán cho i giá trị 5?
-k = 5;
-*k = 5;
-p = 5;
-*p = 5;
+k = 5; đúng
+*k = 5; không đúng vì k không phải con trỏ
+p = 5; không đúng vì p là con trỏ, không thể gán giá trị nv
+*p = 5; đúng    
 
 Giải thích lỗi sau:
 char c = ‘C';
-double *p = &c;
+double *p = &c; lỗi do size của double là 8byte còn char chỉ là 1byte
 

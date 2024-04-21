@@ -3,15 +3,15 @@
 using namespace std;
 
 bool check(int N,  vector<int>& a) {
-    unordered_set<int> numSet;
+    vector<int> res(1000);
 
     for (int num : a) {
-        if (numSet.count(num) > 0) {
+        if(res[num] > 0)
+        {
             return true;
         }
-        numSet.insert(num);
+        res[num] =1;
     }
-
     return false;
 }
 

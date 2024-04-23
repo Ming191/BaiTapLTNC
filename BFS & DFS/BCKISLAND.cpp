@@ -6,7 +6,7 @@ int a[300][300];
 int m,n;
 const int dx[] = {0,0,1,-1};
 const int dy[] = {1,-1,0,0};
-bool visited[300][300]={0};
+vector<vector<int>> visited(300,vector<int>(300,0));
 
 /*
 BCISLAND - Nước biển
@@ -63,23 +63,107 @@ Case 1: Island never splits.
 Case 2: Island splits when ocean rises 3 feet.
 */
 
-
-
-void dfs(int x, int y, int threshold)
+void dfs(int x, int y, int thresHold)
 {
     visited[x][y] = true;
 
     for (int i = 0; i < 4; i++)
     {
-        int newX = x + dx[i];
-        int newY = y + dy[i];
+        int newX = x+dx[i];
+        int newY = y+dy[i];
         
-        if (newX >= 0 && newX <= m && newY >= 0 && newY <= n && !visited[newX][newY] && a[newX][newY] > threshold)
+        if (newX >= 0 && newX < n && newY>=0 && newY < m && !visited[newX][newY] && a[newX][newY] > thresHold)
         {
-            dfs(newX, newY, threshold);
+            dfs(newX,newY,thresHold);
+        }
+    }
+}
+
+void bfs(int x,int y, int thresHold)
+{
+    visited[x][y] =true;
+
+    queue<pair<int,int>> q;
+    q.push({x,y});
+
+    while (!q.empty())
+    {
+        int currX = q.front().first;
+        int currY = q.front().second;
+
+        q.pop();
+
+        for (int i = 0; i < 4; i++)
+        {
+            int newX = currX + dx[i];
+            int newY = currY + dy[i];
+
+            if (newX >= 0 && newX < m && newY >= 0 && newY <n && !visited[newX][newY] && a[newX][newY] > thresHold)
+            {
+                visited[newX][newY] = true;
+                q.push({newX,newY});
+            }
+            
         }
         
     }
+    
+}
+
+void countDFS()
+{
+    for (int k = 1; k < 10; k++)
+    {
+        visited = vector<vector<int>>(300,vector<int>(300,0));
+        int thresHold = k;
+        int count = 0;
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if(!visited[i][j] && a[i][j] > thresHold)
+                {
+                    dfs(i,j,k);
+                    count++;
+                }
+            }
+        }
+        if (count > 1)
+        {
+            cout << k;
+            break;
+        }
+    }
+    cout << 0;
+}
+
+void countBFS()
+{
+    for (int k = 1; k < 10; k++)
+    {
+        visited = vector<vector<int>>(300,vector<int>(300,0));
+        int thresHold = k;
+        int count = 0;
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if(!visited[i][j] && a[i][j] > thresHold)
+                {
+                    bfs(i,j,k);
+                    count++;
+                }
+            }
+        }
+        if (count > 1)
+        {
+            cout << k;
+            break;
+        }
+    }
+    cout << 0;
 }
 
 int main()
@@ -87,30 +171,10 @@ int main()
     cin >> m >> n;
     for (int i = 0; i < m; i++)
     {
-        for(int j = 0; j<n; j++)
+        for (int j = 0; j < n; j++)
         {
             cin >> a[i][j];
         }
     }
-
-    int k = 1;
-    while (true)
-    {
-        int count = 0;
-        for (int i = 0; i < m; i++)
-        {
-            for(int j = 0; j<n; j++)
-            {
-                if (!visited)
-                {
-                    /* code */
-                }
-                
-            }
-        }
-    }
-    
-    
-
-    
+    countBFS();
 }

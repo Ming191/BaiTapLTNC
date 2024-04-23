@@ -7,7 +7,7 @@
 
         int* a = &local;
 
-        delete a; 
+        delete a; // lỗi xóa một con trỏ không được sinh ra từ toán tử new
 
         cerr << a;
 
